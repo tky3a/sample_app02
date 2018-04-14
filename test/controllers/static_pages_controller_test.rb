@@ -19,7 +19,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     ##assert_select:特定のHTMLタグが存在するかテストする
     #この場合titleタグが存在していて、タイトルが下記の様に表示されているか検証
-    assert_select "title", "Home|#{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
   #helpアクションに対するテスト
