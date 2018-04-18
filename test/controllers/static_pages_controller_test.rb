@@ -24,9 +24,10 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   #helpアクションに対するテスト
   test "should get help" do
-    ##static_pages_helpにアクセスすると成功するはず
+    ##(static_pages_)helpにアクセスすると成功するはず
     #アクセスできればGreen出来なければRed
-    get static_pages_help_url
+    #get static_pages_help_url
+    get help_url
     assert_response :success
     ##assert_select:特定のHTMLタグが存在するかテストする
     #この場合titleタグが存在していて、タイトルが下記の様に表示されているか検証
@@ -37,7 +38,8 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get about" do
     ##static_pages_aboutにアクセスすると成功するはず
     #アクセスできればGreen出来なければRed
-    get static_pages_about_url
+    #get static_pages_about_url
+    get about_url
     assert_response :success
     ##assert_select:特定のHTMLタグが存在するかテストする
     #この場合titleタグが存在していて、タイトルが下記の様に表示されているか検証
@@ -46,7 +48,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   #contactアクションに対するテスト
   test "should get contact" do
-    get static_pages_contact_url
+    get contact_url
     assert_response :success
     assert_select "title", "Contact|#{@base_title}"
   end

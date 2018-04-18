@@ -1,0 +1,136 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, valiables, etc */
+$light-gray: #777;
+$gray-midium-light: #eaeaea;
+
+/* universal */
+
+body {
+  padding-top: 60px;
+  // padding-top: ページ上部にxxピクセルの余白を追加
+}
+
+section {
+  overflow: auto;
+  // overflow: 要素のボックスからはみ出た部分をどう扱うか を指定
+  // autoオプション: ブラウザにより表示が変わる（基本的にはスクロールできる状態に）
+}
+
+textarea {
+  resize: vertical;
+  // resize: ユーザーが要素のサイズを変更できるかどうかを指定する
+  //verticalオプション: ユーザーに要素の高さのリサイズ機能を提供する
+}
+
+.center {
+  text-align: center;
+  // テキストを中央へ
+  h1 {
+    margin-bottom: 10px;
+    // margin-bottom: 下マージンを指定する
+  }
+}
+
+/* typography  */
+
+h1, h2, h3, h4, h5, h6, {
+  line-height: 1;
+}
+
+h1 {
+  font-size : 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  // font-size: フォントのサイズ変更
+  // letter-spacing: 文字同士の間隔を指定
+  // margin-bottom: 下マージンを指定
+  // text-align: 文章の揃え位置を指定
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $light-gray;
+  // font-size: フォントのサイズ変更
+  // letter-spacing: 文字同士の間隔を指定
+  // margin-bottom: 下マージンを指定
+  // text-align: 文章の揃え位置を指定
+  // font-weight: フォントの太さを指定
+}
+
+p {
+  line-height: 1.1em;
+  font-size: 1.7em;
+  // line-height: 行の高さを指定する
+  // font-size: フォントのサイズ変更
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  // float: 指定された要素を左または右に寄せて配置する
+  // margin-right: 右マージンを指定
+  // font-size: フォントのサイズ指定
+  // text-taransform: テキストの大文字表示・小文字表示を指定する
+    // uppercaseオプション: 大文字に変更
+  // letter-spacing: 文字同士の間隔を指定
+  // padding-top: 上パディングを指定する
+  // font-weight: フォントの太さを指定
+
+/* logoにカーソル合わした時の設定 */
+&:hover {
+  color: #fff;
+  text-decoration: none;
+  // text-decoration: テキストに下線・上線・打ち消し線を付けたり、点滅させる
+    // noneオプション: 下線や点滅効果が出ない様にする
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-midium-light;
+  color: $light-gray;
+  // border-top: 上ボーダーのスタイル・太さ・色を指定する
+    // solidオプション: １本線で表示
+    // #eaeaea: 淡いグレー
+ a {
+  color: #555;
+  // #555: 薄い黒
+  &:hover {
+  color: #222;
+
+  small {
+    float: left;
+
+    ul {
+      float: right;
+      list-style: none;
+      // float: 指定された要素を左または右に寄せて配置する
+      // リストの先頭に表示するマーカー文字の種類を指定する
+        // noneオプション:　マーカー無し表示にする
+        li {
+          float: left;
+          margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+}
