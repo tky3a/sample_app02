@@ -9,8 +9,14 @@
   <body>
     <%= render 'layouts/header' %>
       <div class="container">
+        <!-- フラッシュメッセージの内容を全ページで表示する(flash設定している内容 ) -->
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+        <!-- フラッシュメッセージここまで -->
         <%= yield %>
         <%= render 'layouts/footer' %>
+        <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
