@@ -24,6 +24,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       follow_redirect! #user登録後にusers/showにアクセスできるかテスト
       assert_template 'users/show'
       assert_not flash.alert #登録後にflashメッセージが表示されるかテスト
+      assert is_logged_in?
     end
   end
+
+  
 end
