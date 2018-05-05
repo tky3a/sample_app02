@@ -21,12 +21,12 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                 email: "user@example.com",
                                 password: "password",
                                 password_confirmation: "password" }}
+      end
       follow_redirect! #user登録後にusers/showにアクセスできるかテスト
       assert_template 'users/show'
       assert_not flash.alert #登録後にflashメッセージが表示されるかテスト
       assert is_logged_in?
-    end
   end
 
-  
+
 end
